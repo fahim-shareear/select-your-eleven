@@ -5,6 +5,18 @@ import { useState } from 'react';
 
 const Player = ({p, setBalance, availBalance}) => {
     const [isSelected, setIsSelected] = useState(false);
+
+    const handleSelected = () =>{
+        
+        setIsSelected(true)
+        setBalance(availBalance - p.price)
+        if(availBalance < p.price){
+            alert("You don't have enough balance to select this player");
+            setIsSelected(false)
+            setBalance(availBalance)
+            return
+        }
+    }
     
     return (
         <div>
@@ -44,8 +56,7 @@ const Player = ({p, setBalance, availBalance}) => {
                                         text-gray-600 
                                         border-gray-300
                                         rounded-2xl shadow-3xl"
-                                        onClick={() => {setIsSelected(true)
-                                            setBalance(availBalance - p.price)
+                                        onClick={() => {handleSelected()
                                         }}
                                         disabled={isSelected}>
                                             {isSelected? "Selected" : 
