@@ -21,7 +21,7 @@ const AvailablePlayer = ({playerPromise}) => {
                             <img src={playerDash} alt="" />
                             <h2 className="card-title font-bold text-black">{p.name}</h2>
                         </div>
-                        <div className='flex items-center justify-between pb-1 border-b-2'>
+                        <div className='flex items-center justify-between pb-1 border-b-2 border-b-gray-200'>
                             <div className='flex items-center gap-2.5'>
                                 <img src={flagDash} className="mt-4"/>
                                 <h3 className='text-gray-500 mt-4 font-medium'>{p.country}</h3>
