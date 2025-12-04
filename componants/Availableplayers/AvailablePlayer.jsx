@@ -12,7 +12,9 @@ const AvailablePlayer = ({playerPromise}) => {
                 player.map(p => <div className='card-container' key={p.id}>
                 <div className="card bg-white-100 w-96 shadow-sm">
                     <figure className="rounded-2xl shadow">
-                        <img src={p.img} alt="Player" className='p-4 w-[380px] h-[330px] rounded-2xl shadow'/>
+                        <img src={p.img} 
+                        alt="Player" 
+                        className='p-4 w-[380px] h-[330px] rounded-2xl shadow'/>
                     </figure>
                     <div className="card-body shadow">
                         <div className='card-title flex items-center gap-2'>
