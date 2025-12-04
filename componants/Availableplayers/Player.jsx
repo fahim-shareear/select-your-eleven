@@ -7,16 +7,13 @@ const Player = ({p, setBalance, availBalance, purchasedPlayers, setPurchasePlaye
     const [isSelected, setIsSelected] = useState(false);
 
     const handleSelected = () =>{
+        if(availBalance < p.price){
+            alert("You don't have enough balance to select this player");
+            return
+        }
         
         setIsSelected(true)
         setBalance(availBalance - p.price)
-        if(availBalance < p.price){
-            alert("You don't have enough balance to select this player");
-            setIsSelected(false)
-            setBalance(availBalance)
-            return
-        }
-
         setPurchasePlayers([...purchasedPlayers, p]);
     }
     
