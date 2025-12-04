@@ -5,7 +5,7 @@ import dollarImg from '../../assets/dollar1.png'
 const Navbar = ({availBalance}) => {
     return (
         <>
-            <div className="navbar max-w-[1200px] mx-auto sticky top-0 z-50 bg-white-100 shadow">
+            <div className="navbar max-w-[1200px] mx-auto sticky top-0 z-50 bg-white shadow">
                 <div className="flex-1">
                     <a className="text-xl">
                     <img src={navImg} alt="" className='w-[60px] h-[60px]'/></a>
