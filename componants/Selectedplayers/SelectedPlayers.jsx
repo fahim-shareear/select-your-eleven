@@ -5,7 +5,7 @@ import Selectedcard from '../selectedcard/Selectedcard';
 const SelectedPlayers = ({purchasedPlayers}) => {
     console.log(purchasedPlayers);
     return (
-        <div className="max-w-[1200px] mx-auto border border-red-400 rounded-2xl p-4">
+        <div className="max-w-[1200px] mx-auto rounded-2xl p-4 shadow">
             {
                 purchasedPlayers.map(player => <Selectedcard player={player} key={player.id}></Selectedcard>)
             }

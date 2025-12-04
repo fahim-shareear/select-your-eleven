@@ -17,12 +17,12 @@ const playerPromise = fetchPlayers();
 function App() {
   const [availBalance, setBalance] = useState(10000000);
   const [purchasedPlayers, setPurchasePlayers] = useState([])
-  console.log(purchasedPlayers);
+  // console.log(purchasedPlayers);
   const [toggle, setToggle] = useState(true);
   return (
     <>
     <Navbar availBalance={availBalance}></Navbar>
-    <div className='max-w-[1200px] mx-auto flex justify-between items-center mt-15 mb-5'>
+    <div className='max-w-[1200px] mx-auto flex justify-between items-center mt-15 mb-5 sticky top-[80px] bg-white z-40 p-4 rounded-2xl shadow'>
       <h1 className='font-bold'>{toggle === true? "Available Players" : `Selected Players(${purchasedPlayers.length}/6)`}</h1>
       <div className='flex items-center gap-0'>
         <button className={`p-2 text-[15px] font-medium border cursor-pointer border-gray-400 rounded-l-xl border-r-0 ${toggle === true? "bg-[#E7FE29]" : ""}`} onClick={() => setToggle(true)}>Available</button>
