@@ -3,13 +3,13 @@ import '../../../src/App.css';
 import Player from './Player';
 
 
-const AvailablePlayer = ({playerPromise}) => {
+const AvailablePlayer = ({playerPromise, setBalance, availBalance}) => {
     const player = use(playerPromise);
     // console.log(player);
     return (
         <div className="max-w-[1200px] mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 mt-8 mb-10">
             {
-                player.map(p => <Player p={p} key={p.id}></Player>)
+                player.map(p => <Player p={p} key={p.id} setBalance={setBalance} availBalance={availBalance}></Player>)
             }
         </div>
     );

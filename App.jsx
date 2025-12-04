@@ -5,18 +5,21 @@ import Navbar from './componants/Navbar/Navbar';
 import SelectedPlayers from './componants/Selectedplayers/SelectedPlayers';
 
 
+
+
 const fetchPlayers = async () =>{
   const res = await fetch('/players.json');
   return res.json()
 }
 
+const playerPromise = fetchPlayers();
 
 function App() {
+  const [availBalance, setBalance] = useState(6000000000);
   const [toggle, setToggle] = useState(true);
-  const playerPromise = fetchPlayers();
   return (
     <>
-    <Navbar></Navbar>
+    <Navbar availBalance={availBalance}></Navbar>
     <div className='max-w-[1200px] mx-auto flex justify-between items-center mt-15 mb-5'>
       <h1 className='font-bold'>{toggle === true? "Available Players" : "Selected Players"}</h1>
       <div className='flex items-center gap-0'>
@@ -27,7 +30,7 @@ function App() {
 
     {
       toggle === true ? <Suspense fallback={<span className="loading loading-infinity loading-xl flex items-center mx-auto"></span>}>
-                        <AvailablePlayer playerPromise={playerPromise}></AvailablePlayer>
+                        <AvailablePlayer playerPromise={playerPromise} availBalance={ availBalance } setBalance={setBalance}></AvailablePlayer>
                       </Suspense> : <SelectedPlayers></SelectedPlayers>
     }
     </>

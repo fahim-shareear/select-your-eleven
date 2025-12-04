@@ -1,8 +1,11 @@
 import React from 'react';
 import playerDash from '../../assets/Group.png';
 import flagDash from '../../assets/Vector.png';
+import { useState } from 'react';
 
-const Player = ({p}) => {
+const Player = ({p, setBalance, availBalance}) => {
+    const [isSelected, setIsSelected] = useState(false);
+    
     return (
         <div>
             <div className='card-container' key={p.id}>
@@ -36,7 +39,17 @@ const Player = ({p}) => {
                         </div>
                         <div className="card-actions justify-between items-center mt-4">
                             <h3 className="text-black font-bold mt-4">Price <span>$</span> {p.price}</h3>
-                            <button className="btn bg-white text-gray-600 border-gray-300 rounded-2xl shadow-3xl">Choose Player</button>
+                            <button className="
+                                        btn bg-white 
+                                        text-gray-600 
+                                        border-gray-300
+                                        rounded-2xl shadow-3xl"
+                                        onClick={() => {setIsSelected(true)
+                                            setBalance(availBalance - p.price)
+                                        }}
+                                        disabled={isSelected}>
+                                            {isSelected? "Selected" : 
+                                            "Choose Player"}</button>
                         </div>
                     </div>
                 </div>
