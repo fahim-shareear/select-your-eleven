@@ -3,7 +3,7 @@ import playerDash from '../../assets/Group.png';
 import flagDash from '../../assets/Vector.png';
 import { useState } from 'react';
 
-const Player = ({p, setBalance, availBalance}) => {
+const Player = ({p, setBalance, availBalance, purchasedPlayers, setPurchasePlayers}) => {
     const [isSelected, setIsSelected] = useState(false);
 
     const handleSelected = () =>{
@@ -16,6 +16,8 @@ const Player = ({p, setBalance, availBalance}) => {
             setBalance(availBalance)
             return
         }
+
+        setPurchasePlayers([...purchasedPlayers, p]);
     }
     
     return (
