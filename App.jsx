@@ -16,7 +16,7 @@ const fetchPlayers = async () =>{
 const playerPromise = fetchPlayers();
 
 function App() {
-  const [availBalance, setBalance] = useState(1000000);
+  const [availBalance, setBalance] = useState(10000000);
   const [purchasedPlayers, setPurchasePlayers] = useState([])
   // console.log(purchasedPlayers);
   const [toggle, setToggle] = useState(true);
@@ -45,6 +45,7 @@ function App() {
                       </Suspense> : <SelectedPlayers
                       purchasedPlayers= {purchasedPlayers} setPurchasePlayers={setPurchasePlayers} deletePlayer={deletePlayer}></SelectedPlayers>
     }
+    
     <ToastContainer></ToastContainer>
     </>
   )

@@ -12,10 +12,16 @@ const Player = ({p, setBalance, availBalance, purchasedPlayers, setPurchasePlaye
             toast("You don't have enough balance to select this player");
             return
         }
+        if(purchasedPlayers.length === 6){
+            toast("You can select maximum 6 players");
+            return;
+        }
         
         setIsSelected(true)
         setBalance(availBalance - p.price)
         setPurchasePlayers([...purchasedPlayers, p]);
+
+        toast(`${p.name} has been selected`);
     }
     
     return (

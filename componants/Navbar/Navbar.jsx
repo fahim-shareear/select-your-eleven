@@ -4,8 +4,12 @@ import dollarImg from '../../assets/dollar1.png';
 import bannerBg from '../../assets/bg-shadow.png';
 import bannerMain from '../../assets/banner-main.png';
 import '../../App.css';
+import { toast } from 'react-toastify';
 
 const Navbar = ({availBalance}) => {
+    const handleClick = () =>{
+        toast("Free credit isn't available now. Come Back Later!");
+    }
     return (
         <>
             <div className="navbar max-w-[1200px] mx-auto sticky top-0 z-50 bg-white">
@@ -26,7 +30,9 @@ const Navbar = ({availBalance}) => {
                     <h1>Assemble Your Ultimate Dream 11 Cricket Team</h1>
                     <p>Beyond Boundaries Beyond Limits</p>
                     <div className='w-[240px] flex items-center justify-center h-[70px] border-2 border-yellow-500 mt-8 rounded-2xl'>
-                        <button className='btn text-2xl text-black font-bold p-2 cursor-pointer bg-yellow-500 rounded-2xl'>Claim Free Credit</button>
+                        <button className='btn text-2xl text-black font-bold p-2 cursor-pointer bg-yellow-500 rounded-2xl' 
+                        
+                        onClick={() => handleClick()}>Claim Free Credit</button>
                     </div>
                 </div>
             </div>
