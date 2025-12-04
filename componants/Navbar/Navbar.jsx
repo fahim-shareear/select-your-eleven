@@ -10,7 +10,7 @@ const Navbar = () => {
                     <a className="text-xl">
                     <img src={navImg} alt="" className='w-[60px] h-[60px]'/></a>
                 </div>
-                <div className="flex gap-2 items-center">
+                <div className="flex gap-2 items-center border border-gray-300 rounded-2xl p-2 shadow">
                     <span className='text-black font-bold'>6000000000</span>
                     <span className='text-black font-bold'>Coin</span>
                     <img src={dollarImg} alt="" />
