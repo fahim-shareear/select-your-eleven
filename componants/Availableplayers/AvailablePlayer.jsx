@@ -7,7 +7,7 @@ const AvailablePlayer = ({playerPromise}) => {
     const player = use(playerPromise);
     // console.log(player);
     return (
-        <div className="max-w-[1200px] mx-auto grid grid-cols-3">
+        <div className="max-w-[1200px] mx-auto grid grid-cols-3 gap-10 mt-10 mb-10">
             {
                 player.map(p => <div className='card-container'>
                 <div className="card bg-white-100 w-96 shadow-sm">
