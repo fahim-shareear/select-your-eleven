@@ -2,13 +2,14 @@ import React from 'react';
 import playerDash from '../../assets/Group.png';
 import flagDash from '../../assets/Vector.png';
 import { useState } from 'react';
+import { toast } from 'react-toastify';
 
 const Player = ({p, setBalance, availBalance, purchasedPlayers, setPurchasePlayers}) => {
     const [isSelected, setIsSelected] = useState(false);
 
     const handleSelected = () =>{
         if(availBalance < p.price){
-            alert("You don't have enough balance to select this player");
+            toast("You don't have enough balance to select this player");
             return
         }
         
