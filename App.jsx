@@ -17,11 +17,11 @@ function App() {
   return (
     <>
     <Navbar></Navbar>
-    <div className='max-w-[1200px] mx-auto flex justify-between items-center'>
+    <div className='max-w-[1200px] mx-auto flex justify-between items-center mt-15 mb-5'>
       <h1 className='font-bold'>{toggle === true? "Available Players" : "Selected Players"}</h1>
       <div className='flex items-center gap-0'>
-        <button className={`p-2 text-[15px] font-medium border border-gray-400 rounded-l-xl border-r-0 ${toggle === true? "bg-[#E7FE29]" : ""}`} onClick={() => setToggle(true)}>Available</button>
-        <button className={`p-2 text-[15px] font-medium border border-gray-400 rounded-r-xl border-l-0 ${toggle === false? "bg-[#E7FE29]": ""}`} onClick={() => setToggle(false)}>Selected <span>(0)</span></button>
+        <button className={`p-2 text-[15px] font-medium border cursor-pointer border-gray-400 rounded-l-xl border-r-0 ${toggle === true? "bg-[#E7FE29]" : ""}`} onClick={() => setToggle(true)}>Available</button>
+        <button className={`p-2 text-[15px] font-medium border cursor-pointer border-gray-400 rounded-r-xl border-l-0 ${toggle === false? "bg-[#E7FE29]": ""}`} onClick={() => setToggle(false)}>Selected <span>(0)</span></button>
       </div>
     </div>
 
