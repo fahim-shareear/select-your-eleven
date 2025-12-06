@@ -4,6 +4,7 @@ import AvailablePlayer from './componants/Availableplayers/AvailablePlayer';
 import Navbar from './componants/Navbar/Navbar';
 import SelectedPlayers from './componants/Selectedplayers/SelectedPlayers';
 import { ToastContainer } from 'react-toastify';
+import Footer from './componants/footer/Footer';
 
 
 
@@ -45,7 +46,7 @@ function App() {
                       </Suspense> : <SelectedPlayers
                       purchasedPlayers= {purchasedPlayers} setPurchasePlayers={setPurchasePlayers} deletePlayer={deletePlayer}></SelectedPlayers>
     }
-    
+    <Footer></Footer>
     <ToastContainer></ToastContainer>
     </>
   )
